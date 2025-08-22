@@ -1,0 +1,25 @@
+.con-postagem {
+    padding: 2rem;
+}
+
+.con-postagem-flex{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.fix-postagem-card{
+    width: 31%;
+    margin-left: 2%;
+}
+
+@media (max-width: 768px) {
+    .con-postagem-flex{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .fix-postagem-card{
+    width: 100%;
+}
+}

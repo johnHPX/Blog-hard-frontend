@@ -1,0 +1,44 @@
+.sobre {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  color: white;
+  background: #1e293b; /* fundo em azul bem escuro */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  line-height: 1.6;
+}
+
+.sobre h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.sobre h2 {
+  font-size: 1.4rem;
+  margin: 20px 0 10px;
+  color: #60a5fa;
+}
+
+.sobre p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.sobre strong {
+  color: #93c5fd; /* azul mais claro para destaque */
+}
+
+.sobre em {
+  color: #a5b4fc; /* tom lilás suave */
+  font-style: normal;
+}
+
+.sobre-autor,
+.sobre-missao {
+  margin-top: 25px;
+  padding: 15px;
+  background: #111827; /* contraste */
+  border-radius: 8px;
+}

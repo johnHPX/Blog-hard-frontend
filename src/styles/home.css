@@ -1,0 +1,32 @@
+.container {
+    padding: 2rem;
+}
+
+.titulo{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.con-flex{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.con-card{
+    width: 40%;
+    margin: 0.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+    .con-flex{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .con-card{
+        width: 100%;
+    }
+}
