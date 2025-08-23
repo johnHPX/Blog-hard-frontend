@@ -1,9 +1,7 @@
 .navBar {
-  padding-inline: 2%; /* 2% à esquerda e à direita */
+  padding-inline: 2%; 
 }
 
-
-/* Menu padrão (desktop) */
 .menu {
   display: flex;
   gap: 1.5rem;
@@ -29,15 +27,12 @@
   cursor: pointer;
 }
 
-/* ======================
-   MOBILE 
-====================== */
 @media (max-width: 768px) {
-  /* Esconde menu no mobile */
+
   .menu {
     display: none;
     position: absolute;
-    top: 60px;  /* abaixo do header */
+    top: 60px;  
     right: 0;
     background: var(--primary);
     flex-direction: column;
@@ -47,12 +42,11 @@
     box-shadow: -2px 2px 6px rgba(0,0,0,0.3);
   }
 
-  /* Mostra quando ativo */
+
   .menu.active {
     display: flex;
   }
 
-  /* Ícone hamburguer aparece */
   .menu-toggle {
     display: block;
   }

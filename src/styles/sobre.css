@@ -3,7 +3,7 @@
   margin: 40px auto;
   padding: 20px;
   color: white;
-  background: #1e293b; /* fundo em azul bem escuro */
+  background: #1e293b;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
   line-height: 1.6;
@@ -27,11 +27,11 @@
 }
 
 .sobre strong {
-  color: #93c5fd; /* azul mais claro para destaque */
+  color: #93c5fd; 
 }
 
 .sobre em {
-  color: #a5b4fc; /* tom lilás suave */
+  color: #a5b4fc; 
   font-style: normal;
 }
 
@@ -39,6 +39,6 @@
 .sobre-missao {
   margin-top: 25px;
   padding: 15px;
-  background: #111827; /* contraste */
+  background: #111827; 
   border-radius: 8px;
 }

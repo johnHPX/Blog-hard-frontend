@@ -8,7 +8,7 @@ export default function Navbar() {
 
   return (
     <nav className="navBar">
-      {/* Botão hamburguer visível só no mobile */}
+      {}
       <button 
         className="menu-toggle" 
         onClick={() => setMenuOpen(!menuOpen)}
@@ -17,7 +17,7 @@ export default function Navbar() {
         {menuOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      {/* Menu normal */}
+      {}
       <ul className={`menu ${menuOpen ? "active" : ""}`}>
         <li><Link to={"/"}><FaHome /> Home</Link></li>
         <li><Link to={"/postagens"}><FaBook /> Postagens</Link></li>

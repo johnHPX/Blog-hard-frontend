@@ -30,9 +30,3 @@
 .postCard a:hover {
   color: var(--text-light);
 }
-
-/* @media (max-width: 768px){
-  .postCard{
-    width: 100%;
-  }
-} */
