@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/postPage.css";
 
 export default function PostPage() {
-  const [likes, setLikes] = useState(12); // exemplo
+  const [likes, setLikes] = useState(12); 
   const [comments, setComments] = useState([
     {
       id: 1,

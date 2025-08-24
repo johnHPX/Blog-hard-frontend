@@ -9,9 +9,12 @@
 }
 
 .logo {
+  margin-left: 2%;
+}
+
+.logo img{
   height: 100px;
   width: auto;
-  margin-left: 2%;
 }
 
 .banner {

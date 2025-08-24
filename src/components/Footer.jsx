@@ -16,8 +16,8 @@ export default function Footer() {
           <li><Link to={"/sobre"}>Sobre</Link></li>
         </ul>
         <div className="social-icons">
-          <a href="https://github.com/johnHPX"><FaGithub /></a>
-          <a href="https://www.linkedin.com/in/jonatas-nascimento-freitas/"><FaLinkedin /></a>
+          <a href="https://github.com/johnHPX" target="_blank"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/jonatas-nascimento-freitas/" target="_blank"><FaLinkedin /></a>
           <a href="#"><FaEnvelope /></a>
         </div>
       </div>

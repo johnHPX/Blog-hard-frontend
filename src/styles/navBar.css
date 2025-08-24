@@ -17,7 +17,6 @@
   color: var(--text-light);
 }
 
-/* Botão hamburguer */
 .menu-toggle {
   display: none;
   background: none;
