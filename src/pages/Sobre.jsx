@@ -5,7 +5,6 @@ import Footer from "../components/Footer"
 export default function Sobre() {
   return (
     <>
-    <Header />
     <main className="sobre">
       <h1>Sobre o Blog</h1>
       <p>
@@ -36,7 +35,6 @@ export default function Sobre() {
         </p>
       </section>
     </main>
-    <Footer/>
     </>
   );
 }

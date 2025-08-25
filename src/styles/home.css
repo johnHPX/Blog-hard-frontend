@@ -20,6 +20,11 @@
     margin: 0.5rem 1rem;
 }
 
+.HomeError{
+    text-align: center;
+    color: #EF4444;
+}
+
 @media (max-width: 768px) {
     .con-flex{
         flex-direction: column;

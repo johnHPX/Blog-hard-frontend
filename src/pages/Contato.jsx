@@ -5,7 +5,6 @@ import Footer from "../components/Footer"
 export default function Contato() {
   return (
     <>
-    <Header />
     <main className="contato">
       <h1>Entre em Contato</h1>
       <p>Envie sua mensagem pelo formulário abaixo ou pelas redes sociais.</p>
@@ -30,7 +29,6 @@ export default function Contato() {
         <p>LinkedIn: <a href="https://linkedin.com/in/seuuser" target="_blank">/seuuser</a></p>
       </section>
     </main>
-     <Footer/>
     </>
   );
 }

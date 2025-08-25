@@ -3,9 +3,6 @@ import "../styles/home.css"
 import { useEffect, useState } from "react";
 import { listAllPost } from "../services/post";
 
-import Header from "../components/Header";
-import Footer from "../components/Footer"
-
 export default function Home() {
   const [posts, setPosts] = useState([])
 
@@ -25,16 +22,19 @@ export default function Home() {
 
   return (
     <>
-      <Header />
       <main className="container">
         <h1 className="titulo">Às 5 postagens mais curtidas</h1>
         <div className="con-flex">
-          {posts.map((post, idx) => (
-          <div className="con-card"><PostCard key={idx} title={post.title} excerpt={post.excerpt} /></div>
-        ))}
+          {
+            posts? 
+            posts.map((post, idx) => (
+              <div className="fix-postagem-card"><PostCard key={idx} title={post.title} excerpt={post.Content} /></div>
+            ))
+            :
+            <p className="pError">Não há nenhuma postagem!</p>
+          }
         </div>
       </main>
-      <Footer/>
     </>
   );
 }
