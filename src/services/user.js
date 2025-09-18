@@ -5,6 +5,7 @@ export async function createUser(user){
         const result = await api.post("/user/store", user, {
             'Content-Type': 'application/json'
         })
+        return result.data
     }catch (err){
         console.log(err)
     }

@@ -1,25 +1,27 @@
 import { useState } from "react";
 import "../styles/cadastro.css"
+import { createUser } from "../services/user";
 
 
 export default function CadastroUsuario() {
-  const [formData, setFormData] = useState({
-    nome: "",
-    nick: "",
-    email: "",
-    telefone: "",
-    senha: "",
-  });
+  const [name, setName] = useState("")
+  const [telephone, setTelephone] = useState("")
+  const [nick, setNick] = useState("")
+  const [email, setEmail] = useState("")
+  const [secret, setSecret] = useState("")
 
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    console.log("Dados enviados:", formData);
+    const data = {
+      "name":name,
+      "telephone":telephone,
+      "nick": nick,
+      "email": email,
+      "secret": secret,
+      "mid": "ok"
+    }
+    const result = await createUser(data)
+    console.log(result)
   };
 
   return (
@@ -31,8 +33,8 @@ export default function CadastroUsuario() {
           <input
             type="text"
             name="nome"
-            value={formData.nome}
-            onChange={handleChange}
+            value={name}
+            onChange={(e) => {setName(e.target.value)}}
             required
           />
         </label>
@@ -42,8 +44,8 @@ export default function CadastroUsuario() {
           <input
             type="text"
             name="nick"
-            value={formData.nick}
-            onChange={handleChange}
+            value={nick}
+            onChange={(e) => {setNick(e.target.value)}}
             required
           />
         </label>
@@ -53,8 +55,8 @@ export default function CadastroUsuario() {
           <input
             type="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => {setEmail(e.target.value)}}
             required
           />
         </label>
@@ -64,8 +66,8 @@ export default function CadastroUsuario() {
           <input
             type="tel"
             name="telefone"
-            value={formData.telefone}
-            onChange={handleChange}
+            value={telephone}
+            onChange={(e) => {setTelephone(e.target.value)}}
           />
         </label>
 
@@ -74,8 +76,8 @@ export default function CadastroUsuario() {
           <input
             type="password"
             name="senha"
-            value={formData.senha}
-            onChange={handleChange}
+            value={secret}
+            onChange={(e) => {setSecret(e.target.value)}}
             required
           />
         </label>

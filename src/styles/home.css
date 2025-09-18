@@ -26,6 +26,11 @@
 }
 
 @media (max-width: 768px) {
+
+    .titulo{
+        font-size: 1.5em;
+    }
+
     .con-flex{
         flex-direction: column;
         flex-wrap: nowrap;
