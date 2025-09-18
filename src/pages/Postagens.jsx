@@ -48,7 +48,7 @@ export default function Postagens(){
               <div className="fix-postagem-card"><PostCard key={idx} title={post.title} excerpt={post.Content} /></div>
             ))
             :
-            <p className="HomeError">Não foram encontradas postagens com essa categoria!</p>
+            <p className="pError">Não foram encontradas postagens com essa categoria!</p>
           }
         </div>
       </main>

@@ -67,4 +67,8 @@
     .search input{
       width: 80%;
     }
+
+    .pError{
+        margin-top: 10px;
+    }
 }

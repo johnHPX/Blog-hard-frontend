@@ -31,7 +31,7 @@ export default function Home() {
               <div className="con-card"><PostCard key={idx} title={post.title} excerpt={post.Content} /></div>
             ))
             :
-            <p className="pError">Não há nenhuma postagem!</p>
+            <p className="HError">Não há nenhuma postagem!</p>
           }
         </div>
       </main>

@@ -105,4 +105,8 @@
   .login-session li a {
     font-size: 1em;
   }
+
+  .banner{
+    background-size: cover;
+  }
 }
