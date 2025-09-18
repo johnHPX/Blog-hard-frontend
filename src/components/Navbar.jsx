@@ -21,7 +21,7 @@ export default function Navbar() {
       <ul className={`menu ${menuOpen ? "active" : ""}`}>
         <li><Link to={"/"}><FaHome /> Home</Link></li>
         <li><Link to={"/postagens"}><FaBook /> Postagens</Link></li>
-        <li><Link to={"/Contato"}><FaPhone /> Contato</Link></li>
+        <li><Link to={"/contato"}><FaPhone /> Contato</Link></li>
         <li><Link to={"/sobre"}><FaInfoCircle /> Sobre</Link></li>
       </ul>
     </nav>

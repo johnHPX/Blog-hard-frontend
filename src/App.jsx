@@ -5,6 +5,7 @@ import Postagens from "./pages/Postagens"
 import Sobre from "./pages/Sobre"
 import Contato from "./pages/Contato"
 import PostPage from "./pages/PostPage"
+import Cadastro from "./pages/Cadastro";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer"
@@ -16,9 +17,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/postagens" element={<Postagens />} />
-        <Route path="/Contato" element={<Contato />} />
+        <Route path="/contato" element={<Contato />} />
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/post/:id" element={<PostPage />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
       <Footer/>
     </Router>

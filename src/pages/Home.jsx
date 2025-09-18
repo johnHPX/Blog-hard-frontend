@@ -28,7 +28,7 @@ export default function Home() {
           {
             posts? 
             posts.map((post, idx) => (
-              <div className="fix-postagem-card"><PostCard key={idx} title={post.title} excerpt={post.Content} /></div>
+              <div className="con-card"><PostCard key={idx} title={post.title} excerpt={post.Content} /></div>
             ))
             :
             <p className="pError">Não há nenhuma postagem!</p>
