@@ -2,8 +2,12 @@ import { useState } from "react";
 import "../styles/cadastro.css"
 import { createUser } from "../services/user";
 
+import { useNavigate } from "react-router-dom";
+
 
 export default function CadastroUsuario() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("")
   const [telephone, setTelephone] = useState("")
   const [nick, setNick] = useState("")
@@ -21,7 +25,13 @@ export default function CadastroUsuario() {
       "mid": "ok"
     }
     const result = await createUser(data)
-    console.log(result)
+    if (result.mid === "ok") {
+        alert("Usuário criado com sucesso!");
+        navigate("/"); 
+    } else {
+        alert("Falha no login. Verifique suas credenciais.");
+    }
+
   };
 
   return (

@@ -13,7 +13,7 @@ export async function createUser(user){
 
 export async function login(nick, password){
     try{
-        const result = await api.post("/user/store", {
+        const result = await api.post("/user/login", {
             nick: nick,
             password: password,
             mid: "ok"

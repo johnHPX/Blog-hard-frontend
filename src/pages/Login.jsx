@@ -1,14 +1,25 @@
 import { useState } from "react";
 import "../styles/login.css"
+import { useNavigate } from "react-router-dom";
 
+import { login } from "../services/user";
 
 export default function LoginUsuario() {
+  const navigate = useNavigate();
+
   const [nick, setNick] = useState("")
   const [secret, setSecret] = useState("")
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Dados enviados:", formData);
+    const result =  await login(nick, secret)
+    if (result.token !== null && result.token !== undefined) {
+        alert("Login realizado com sucesso!");
+        localStorage.setItem("token", result.token);
+        navigate("/"); 
+    } else {
+        alert("Falha no login. Verifique suas credenciais.");
+    }
   };
 
   return (
@@ -16,7 +27,7 @@ export default function LoginUsuario() {
       <h1>Login</h1>
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
-          <p>Nick:</p>
+          <p>Email or Nick:</p>
           <input
             type="text"
             name="nick"
@@ -31,7 +42,7 @@ export default function LoginUsuario() {
             type="password"
             name="senha"
             value={secret}
-            onChange={(e) => setNick(e.target.value)}
+            onChange={(e) => setSecret(e.target.value)}
             required
           />
         </label>
