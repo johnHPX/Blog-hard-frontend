@@ -17,6 +17,7 @@ export default function LoginUsuario() {
         alert("Login realizado com sucesso!");
         localStorage.setItem("token", result.token);
         navigate("/"); 
+        window.location.reload();
     } else {
         alert("Falha no login. Verifique suas credenciais.");
     }

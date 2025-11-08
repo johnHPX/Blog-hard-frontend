@@ -23,7 +23,6 @@ export default function Home() {
   return (
     <>
       <main className="container">
-        <h1 className="titulo">Às 5 postagens mais curtidas</h1>
         <div className="con-flex">
           {
             posts? 

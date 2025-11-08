@@ -39,6 +39,46 @@
   transform: scale(1.05);
 }
 
+.login-session-with-profile{
+  display: flex;
+  flex-direction: row;
+  gap: 15px;          
+  white-space: nowrap; 
+  align-items: center;
+  margin: 0;         
+  padding: 0;
+  margin-right: 15px;
+}
+
+.login-session-with-profile li {
+  list-style: none;
+}
+
+.login-session-logout{
+  margin-right: 10px;
+}
+
+.login-session-logout button {
+  border: none;
+  background: none;
+  color: var(--text-light);
+  font-size: 1.2em;
+  transition: color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.login-session-logout button:hover {
+  color: var(--text-dark);
+  transform: scale(1.05);
+}
+
+.login-session-with-profile li a img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  transition: transform 0.2s;
+} 
+
 .login-session {
   display: flex;
   flex-direction: row;
