@@ -149,4 +149,9 @@
   .banner{
     background-size: cover;
   }
+
+  .login-session-with-profile li a img{
+    width: 40px;
+    height: 40px;
+  }
 }
