@@ -4,35 +4,58 @@ import "../styles/postagens.css";
 import { listAllPost, findByCategory } from "../services/post";
 import { FaSearch } from "react-icons/fa";
 
+import { usePosts } from "../contexts/PostContext";
+
+function capitalize(str) {
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
+
 export default function Postagens() {
-  const [posts, setPosts] = useState([]);
   const [value, setValue] = useState("");
+  const { posts, setPosts, loading } = usePosts();
+
+  async function findPost() {
+    try {
+      const query = capitalize(value.trim());
+
+      let result;
+      if (query === "") {
+        result = await listAllPost();
+      } else {
+        result = await findByCategory(query);
+      }
+
+      if (!result || !result.posts || result.posts.length === 0) {
+        setPosts([]);
+        return;
+      }
+
+      setPosts(result.posts);
+    } catch (err) {
+      console.error(err);
+      setPosts([]); 
+    }
+  }
 
   useEffect(() => {
-    async function getPosts() {
+    const fetchAllPosts = async () => {
       try {
         const result = await listAllPost();
         setPosts(result.posts);
       } catch (err) {
         console.error(err);
       }
-    }
-    getPosts();
-  }, []);
+    };
 
-  async function findPost() {
-    try {
-      if (value.trim() === "") {
-        const result = await listAllPost();
-        setPosts(result.posts);
-      } else {
-        const result = await findByCategory(value);
-        setPosts(result.posts);
-      }
-    } catch (err) {
-      console.error(err);
+    if (value.trim() === "") {
+      fetchAllPosts();
     }
-  }
+  }, [value]);
+
+
+  if (loading) return <p>Carregando...</p>;
 
   return (
     <main className="con-postagem">

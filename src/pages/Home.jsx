@@ -1,39 +1,25 @@
-import PostCard from "../components/PostCard"
-import "../styles/home.css"
-import { useEffect, useState } from "react";
-import { listAllPost } from "../services/post";
+import PostCard from "../components/PostCard";
+import "../styles/home.css";
+import { useFeaturedPosts } from "../contexts/FeaturedPostContext";
 
 export default function Home() {
-  const [posts, setPosts] = useState([])
+  const { featuredPosts, loading } = useFeaturedPosts();
 
-  useEffect(() => {
-    async function getPosts() {
-      try{
-        const result =  await listAllPost()
-        setPosts(result.posts)
-      }catch(err){
-        console.log(err)
-      }
-    }
-
-    getPosts()
-
-  }, [])
+  if (loading) return <p>Carregando...</p>;
 
   return (
-    <>
-      <main className="container">
-        <div className="con-flex">
-          {
-            posts? 
-            posts.map((post, idx) => (
-              <div className="con-card" key={idx}><PostCard title={post.title} excerpt={post.Content} /></div>
-            ))
-            :
-            <p className="HError">Não há nenhuma postagem!</p>
-          }
-        </div>
-      </main>
-    </>
+    <main className="container">
+      <div className="con-flex">
+        {featuredPosts.length > 0 ? (
+          featuredPosts.map((post) => (
+            <div className="con-card" key={post.id}>
+              <PostCard title={post.title} excerpt={post.Content} />
+            </div>
+          ))
+        ) : (
+          <p className="HError">Não há nenhuma postagem!</p>
+        )}
+      </div>
+    </main>
   );
 }
