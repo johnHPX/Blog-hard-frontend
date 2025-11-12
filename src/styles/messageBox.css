@@ -1,0 +1,27 @@
+.message-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeInOut 3s ease forwards;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.message-box.success {
+  background-color: #28a745;
+}
+
+.message-box.error {
+  background-color: #dc3545;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-15px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-15px); }
+}
