@@ -25,8 +25,8 @@ export default function Contato() {
       <section className="contato-info">
         <h2>Outros meios</h2>
         <p>Email: contato@meublog.com</p>
-        <p>GitHub: <a href="https://github.com/seuuser" target="_blank">/seuuser</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/seuuser" target="_blank">/seuuser</a></p>
+        <p>GitHub: <a href="https://github.com/johnHPX" target="_blank">JohnHPX</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/jonatas-nascimento-freitas/" target="_blank">Jonatas Freitas</a></p>
       </section>
     </main>
     </>

@@ -48,6 +48,8 @@ export default function LoginUsuario() {
     }
   };
 
+  if (loading) return <LoadingSpinner/>
+
   return (
     <div className="login-container">
       {message && (
@@ -57,8 +59,6 @@ export default function LoginUsuario() {
           onClose={() => setMessage(null)}
         />
       )}
-
-      {loading && <LoadingSpinner />}
 
       <h1>Login</h1>
       <form className="login-form" onSubmit={handleSubmit}>

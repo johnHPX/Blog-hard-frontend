@@ -4,6 +4,9 @@ import { createUser } from "../services/user";
 
 import { useNavigate } from "react-router-dom";
 
+import LoadingSpinner from "../components/LoadingSpinner";
+import MessageBox from "../components/MessageBox";
+
 
 export default function CadastroUsuario() {
   const navigate = useNavigate();
@@ -14,28 +17,66 @@ export default function CadastroUsuario() {
   const [email, setEmail] = useState("")
   const [secret, setSecret] = useState("")
 
+  // Loading and Message
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState(null)
+  const [messageType, setMessageType] = useState("success")
+
   const handleSubmit =  async (e) => {
     e.preventDefault();
-    const data = {
+
+    if (loading) return
+
+    setLoading(true)
+
+    try{
+      const data = {
       "name":name,
       "telephone":telephone,
       "nick": nick,
       "email": email,
       "secret": secret,
       "mid": "ok"
-    }
-    const result = await createUser(data)
-    if (result.mid === "ok") {
-        alert("Usuário criado com sucesso!");
-        navigate("/"); 
-    } else {
-        alert("Falha no login. Verifique suas credenciais.");
+      }
+
+      const result = await createUser(data)
+      if (result && result.status === 200) {
+          setMessageType("success")
+          setMessage("Usuário cadastrado com sucesso!")
+        
+          setTimeout(() => {
+            navigate("/")
+          }, 2000)
+      }
+
+    }catch(err){
+
+      const errorMsg =
+        err.response?.data?.message ||
+        "Erro ao conectar-se ao servidor. Tente novamente.";
+
+      setMessageType("error");
+      setMessage(errorMsg);
+    }finally{
+      setLoading(false);
     }
 
   };
 
+  if (loading) return <LoadingSpinner/>
+
   return (
     <div className="cadastro-container">
+
+      {message && (
+        <MessageBox
+          type={messageType}
+          message={message}
+          onClose={() => setMessage(null)}
+        />
+      )}
+
+
       <h1>Cadastrar Usuário</h1>
       <form className="cadastro-form" onSubmit={handleSubmit}>
         <label>
@@ -92,8 +133,8 @@ export default function CadastroUsuario() {
           />
         </label>
 
-        <button type="submit" className="btn-submit">
-          Cadastrar
+        <button type="submit" className="btn-submit" disabled={loading}>
+          {loading ? "Cadastrando..." : "Cadastrar"}
         </button>
       </form>
     </div>

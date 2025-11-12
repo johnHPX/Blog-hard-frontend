@@ -7,7 +7,7 @@ export async function createUser(user){
         })
         return result.data
     }catch (err){
-        console.log(err)
+        throw err
     }
 }
 
@@ -22,6 +22,6 @@ export async function login(nick, password){
         })
         return result.data
     }catch (err){
-        console.log(err)
+        throw err
     }
 }
