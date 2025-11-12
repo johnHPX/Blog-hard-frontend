@@ -5,22 +5,25 @@ import { listAllPost, findByCategory } from "../services/post";
 import { FaSearch } from "react-icons/fa";
 
 import { usePosts } from "../contexts/PostContext";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 function capitalize(str) {
   if (!str) return "";
   return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
 }
 
-
 export default function Postagens() {
   const [value, setValue] = useState("");
-  const { posts, setPosts, loading } = usePosts();
+  const [searching, setSearching] = useState(false);
+  const { posts, setPosts } = usePosts();
 
   async function findPost() {
     try {
-      const query = capitalize(value.trim());
+      setSearching(true); 
 
+      const query = capitalize(value.trim());
       let result;
+
       if (query === "") {
         result = await listAllPost();
       } else {
@@ -35,17 +38,22 @@ export default function Postagens() {
       setPosts(result.posts);
     } catch (err) {
       console.error(err);
-      setPosts([]); 
+      setPosts([]);
+    } finally {
+      setSearching(false);
     }
   }
 
   useEffect(() => {
     const fetchAllPosts = async () => {
       try {
+        setSearching(true); 
         const result = await listAllPost();
         setPosts(result.posts);
       } catch (err) {
         console.error(err);
+      } finally {
+        setSearching(false); 
       }
     };
 
@@ -54,8 +62,7 @@ export default function Postagens() {
     }
   }, [value]);
 
-
-  if (loading) return <p>Carregando...</p>;
+  if (searching) return <LoadingSpinner />;
 
   return (
     <main className="con-postagem">
@@ -79,7 +86,9 @@ export default function Postagens() {
             </div>
           ))
         ) : (
-          <p className="pError">Não foram encontradas postagens com essa categoria!</p>
+          <p className="pError">
+            Não foram encontradas postagens com essa categoria!
+          </p>
         )}
       </div>
     </main>
