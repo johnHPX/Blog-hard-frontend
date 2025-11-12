@@ -72,7 +72,7 @@ export default function Postagens() {
       </div>
 
       <div className="con-postagem-flex">
-        {posts.length > 0 ? (
+        {posts && posts.length > 0 ? (
           posts.map((post) => (
             <div key={post.id} className="fix-postagem-card">
               <PostCard title={post.title} excerpt={post.Content} />

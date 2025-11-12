@@ -2,10 +2,12 @@ import PostCard from "../components/PostCard";
 import "../styles/home.css";
 import { useFeaturedPosts } from "../contexts/FeaturedPostContext";
 
+import LoadingSpinner from "../components/LoadingSpinner";
+
 export default function Home() {
   const { featuredPosts, loading } = useFeaturedPosts();
 
-  if (loading) return <p>Carregando...</p>;
+  if (loading) return <LoadingSpinner/>
 
   return (
     <main className="container">
