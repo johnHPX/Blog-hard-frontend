@@ -23,8 +23,9 @@ export default function LoginUsuario() {
 
     setLoading(true);
     try {
-      const result = await login(nick, secret);
+      const lowerNick = nick.toLowerCase
 
+      const result = await login(lowerNick, secret);
       if (result?.token) {
         localStorage.setItem("token", result.token);
 
@@ -35,18 +36,18 @@ export default function LoginUsuario() {
           navigate("/");
           window.location.reload();
         }, 2000);
-      } else {
-        setMessageType("error");
-        setMessage("Falha no login. Verifique suas credenciais.");
       }
     } catch (err) {
-      console.error(err);
-      setMessageType("error");
-      setMessage("Erro ao conectar-se ao servidor. Tente novamente.");
+      const errorMsg =
+        err.response?.data?.message ||
+        "Erro ao conectar-se ao servidor. Tente novamente."
+
+      setMessageType("error")
+      setMessage(errorMsg)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   if (loading) return <LoadingSpinner/>
 

@@ -19,7 +19,7 @@ export default function Home() {
             </div>
           ))
         ) : (
-          <p className="HError">Não há nenhuma postagem!</p>
+          <p className="HError">Não há postagens!</p>
         )}
       </div>
     </main>

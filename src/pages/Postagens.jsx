@@ -6,11 +6,7 @@ import { FaSearch } from "react-icons/fa";
 
 import { usePosts } from "../contexts/PostContext";
 import LoadingSpinner from "../components/LoadingSpinner";
-
-function capitalize(str) {
-  if (!str) return "";
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-}
+import { capitalize } from "../util/wordConvensor";
 
 export default function Postagens() {
   const [value, setValue] = useState("");
@@ -27,7 +23,7 @@ export default function Postagens() {
       if (query === "") {
         result = await listAllPost();
       } else {
-        result = await findByCategory(query);
+        result = await findByCategory(query, 0, 5, 1, "mid");
       }
 
       if (!result || !result.posts || result.posts.length === 0) {
@@ -69,7 +65,7 @@ export default function Postagens() {
       <div className="search">
         <input
           type="text"
-          placeholder="Pesquisar por título ou categoria"
+          placeholder="Pesquisar por categoria"
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />

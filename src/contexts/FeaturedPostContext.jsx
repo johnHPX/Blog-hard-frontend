@@ -10,8 +10,8 @@ export function FeaturedPostProvider({ children }) {
   useEffect(() => {
     async function loadFeatured() {
       try {
-        const result = await listAllPost();
-        setFeaturedPosts(result.posts.slice(0, 5));
+        const result = await listAllPost(0, 5, 1);
+        setFeaturedPosts(result.posts);
       } catch (err) {
         console.error("Erro ao carregar postagens em destaque:", err);
       } finally {

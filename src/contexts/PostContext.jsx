@@ -10,7 +10,7 @@ export function PostProvider({ children }) {
   async function fetchPosts() {
     setLoading(true);
     try {
-      const result = await listAllPost();
+      const result = await listAllPost(0, 10, 1, "mid");
       setPosts(result.posts);
     } catch (err) {
       console.error(err);

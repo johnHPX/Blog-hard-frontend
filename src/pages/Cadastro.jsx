@@ -31,10 +31,10 @@ export default function CadastroUsuario() {
 
     try{
       const data = {
-      "name":name,
+      "name":name.toLowerCase,
       "telephone":telephone,
-      "nick": nick,
-      "email": email,
+      "nick": nick.toLowerCase,
+      "email": email.toLowerCase,
       "secret": secret,
       "mid": "ok"
       }
@@ -50,18 +50,17 @@ export default function CadastroUsuario() {
       }
 
     }catch(err){
-
       const errorMsg =
         err.response?.data?.message ||
-        "Erro ao conectar-se ao servidor. Tente novamente.";
+        "Erro ao conectar-se ao servidor. Tente novamente."
 
-      setMessageType("error");
-      setMessage(errorMsg);
+      setMessageType("error")
+      setMessage(errorMsg)
     }finally{
-      setLoading(false);
+      setLoading(false)
     }
 
-  };
+  }
 
   if (loading) return <LoadingSpinner/>
 
