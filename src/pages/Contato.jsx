@@ -20,7 +20,7 @@ export default function Contato() {
 
       <section className="contato-info">
         <h2>Outros meios</h2>
-        <p>Email: contato@meublog.com</p>
+        <p>Email: jonatasfreitas008@gmail.com</p>
         <p>GitHub: <a href="https://github.com/johnHPX" target="_blank">JohnHPX</a></p>
         <p>LinkedIn: <a href="https://www.linkedin.com/in/jonatas-nascimento-freitas/" target="_blank">Jonatas Freitas</a></p>
       </section>
