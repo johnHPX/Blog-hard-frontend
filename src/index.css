@@ -10,7 +10,7 @@
   --secondary: #2563EB;  /* Azul médio */
   --background: #0A0A0A; /* Fundo principal */
   --text-light: #F5F5F5; /* Texto claro */
-  --text-dark: #111;     /* Texto escuro (se precisar em cards claros) */
+  --text-dark: #111;     /* Texto escuro */
 }
 
 

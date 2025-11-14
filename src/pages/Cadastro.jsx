@@ -31,10 +31,10 @@ export default function CadastroUsuario() {
 
     try{
       const data = {
-      "name":name.toLowerCase,
+      "name":name.toLowerCase(),
       "telephone":telephone,
-      "nick": nick.toLowerCase,
-      "email": email.toLowerCase,
+      "nick": nick.toLowerCase(),
+      "email": email.toLowerCase(),
       "secret": secret,
       "mid": "ok"
       }

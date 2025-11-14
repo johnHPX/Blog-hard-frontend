@@ -23,7 +23,7 @@ export default function LoginUsuario() {
 
     setLoading(true);
     try {
-      const lowerNick = nick.toLowerCase
+      const lowerNick = nick.toLowerCase()
 
       const result = await login(lowerNick, secret);
       if (result?.token) {

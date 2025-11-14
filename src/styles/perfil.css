@@ -1,7 +1,130 @@
-.main-perfil{
-    display: flex;
+.main-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 80vh;
+  font-family: "Inter", sans-serif;
+}
+
+/* Card principal */
+.perfil-card {
+  background-color: var(--background);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Avatar */
+.perfil-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Informações do usuário */
+.perfil-info h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text-light);
+}
+
+.perfil-email {
+  color: #555;
+  margin-bottom: 0.25rem;
+}
+
+.perfil-role {
+  color: #007bff;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.perfil-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Botões */
+.perfil-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.perfil-actions button {
+  background: #007bff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.perfil-actions button:hover {
+  background: #0056b3;
+}
+
+.btn-logout {
+  background: #dc3545;
+}
+
+.btn-logout:hover {
+  background: #b02a37;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .perfil-card {
+    padding: 1.5rem;
+  }
+
+  .perfil-info h1 {
+    font-size: 1.4rem;
+  }
+
+  .perfil-actions {
     flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    flex: 1;
+    width: 100%;
+  }
+
+  .perfil-actions button {
+    width: 100%;
+  }
+}
+
+/* Loader */
+.perfil-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+  border: 4px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

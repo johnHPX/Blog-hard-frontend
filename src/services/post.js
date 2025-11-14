@@ -6,7 +6,7 @@ export async function listAllPost(offset, limit, page, mid){
         return result.data
     }catch (error){
         console.log(error)
-        return {}
+        return { success: false, data: null };
     }
 }
 
@@ -16,6 +16,6 @@ export async function findByCategory(category, offset, limit, page, mid){
         return result.data
     }catch (error){
         console.log(error)
-        return {}
+        return { success: false, data: null };
     }
 }

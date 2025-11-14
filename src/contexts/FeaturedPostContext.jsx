@@ -9,14 +9,15 @@ export function FeaturedPostProvider({ children }) {
 
   useEffect(() => {
     async function loadFeatured() {
-      try {
-        const result = await listAllPost(0, 5, 1);
-        setFeaturedPosts(result.posts);
-      } catch (err) {
-        console.error("Erro ao carregar postagens em destaque:", err);
-      } finally {
-        setLoading(false);
+      const result = await listAllPost(0, 5, 1);
+
+      if (result.success && result.data?.posts) {
+        setFeaturedPosts(result.data.posts);
+      } else {
+        setFeaturedPosts([]);
       }
+
+      setLoading(false);
     }
 
     loadFeatured();
