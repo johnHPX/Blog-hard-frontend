@@ -9,10 +9,11 @@ export function FeaturedPostProvider({ children }) {
 
   useEffect(() => {
     async function loadFeatured() {
-      const result = await listAllPost(0, 5, 1);
+      const result = await listAllPost(0, 5, 1, "ok");
+      console.log(result)
 
-      if (result.success && result.data?.posts) {
-        setFeaturedPosts(result.data.posts);
+      if (result && result?.posts) {
+        setFeaturedPosts(result.posts);
       } else {
         setFeaturedPosts([]);
       }
