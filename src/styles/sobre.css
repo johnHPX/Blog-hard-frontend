@@ -5,8 +5,9 @@
   color: white;
   background: #1e293b;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   line-height: 1.6;
+  flex: 1;
 }
 
 .sobre h1 {
@@ -27,11 +28,11 @@
 }
 
 .sobre strong {
-  color: #93c5fd; 
+  color: #93c5fd;
 }
 
 .sobre em {
-  color: #a5b4fc; 
+  color: #a5b4fc;
   font-style: normal;
 }
 
@@ -39,6 +40,6 @@
 .sobre-missao {
   margin-top: 25px;
   padding: 15px;
-  background: #111827; 
+  background: #111827;
   border-radius: 8px;
 }

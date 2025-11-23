@@ -5,7 +5,8 @@
   color: white;
   background: #1e293b;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  flex: 1;
 }
 
 .contato h1 {
