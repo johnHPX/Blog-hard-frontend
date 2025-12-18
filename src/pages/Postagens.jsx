@@ -15,7 +15,7 @@ export default function Postagens() {
 
   async function findPost() {
     try {
-      setSearching(true); 
+      setSearching(true);
 
       const query = capitalize(value.trim());
       let result;
@@ -39,24 +39,6 @@ export default function Postagens() {
       setSearching(false);
     }
   }
-
-  // useEffect(() => {
-  //   const fetchAllPosts = async () => {
-  //     try {
-  //       setSearching(true); 
-  //       const result = await listAllPost();
-  //       setPosts(result.posts);
-  //     } catch (err) {
-  //       console.error(err);
-  //     } finally {
-  //       setSearching(false); 
-  //     }
-  //   };
-
-  //   if (value.trim() === "") {
-  //     fetchAllPosts();
-  //   }
-  // }, [value]);
 
   if (searching) return <LoadingSpinner />;
 

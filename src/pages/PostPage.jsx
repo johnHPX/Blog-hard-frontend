@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../styles/postPage.css";
 
 export default function PostPage() {
-  const [likes, setLikes] = useState(12); 
+  const [likes, setLikes] = useState(12);
   const [comments, setComments] = useState([
     {
       id: 1,
@@ -33,7 +33,6 @@ export default function PostPage() {
 
   return (
     <div className="post-container">
-      {/* Post */}
       <article className="post">
         <h1 className="post-title">Título da Postagem</h1>
         <p className="post-content">
@@ -46,11 +45,9 @@ export default function PostPage() {
         </div>
       </article>
 
-      {/* Comentários */}
       <section className="comments">
         <h2>Comentários</h2>
 
-        {/* Formulário */}
         <div className="add-comment">
           <textarea
             value={newComment}
@@ -60,13 +57,11 @@ export default function PostPage() {
           <button onClick={handleAddComment}>Comentar</button>
         </div>
 
-        {/* Lista de comentários */}
         <ul className="comment-list">
           {comments.map((c) => (
             <li key={c.id} className="comment">
               <p><strong>{c.author}:</strong> {c.text}</p>
 
-              {/* Respostas */}
               <ul className="replies">
                 {c.replies.map((r) => (
                   <li key={r.id}>

@@ -31,9 +31,9 @@ export default function Header() {
 
         {token ? (
           <ul className="login-session-with-profile">
-            <li className="login-session-logout">
+            {/* <li className="login-session-logout">
               <button onClick={handleLogout}>Sair</button>
-            </li>
+            </li> */}
             <li>
               <Link to="/perfil">
                 <img
