@@ -22,47 +22,48 @@ export default function CadastroUsuario() {
   const [message, setMessage] = useState(null)
   const [messageType, setMessageType] = useState("success")
 
-  const handleSubmit =  async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (loading) return
 
     setLoading(true)
 
-    try{
+    try {
       const data = {
-      "name":name.toLowerCase(),
-      "telephone":telephone,
-      "nick": nick.toLowerCase(),
-      "email": email.toLowerCase(),
-      "secret": secret,
-      "mid": "ok"
+        "name": name.toLowerCase(),
+        "telephone": telephone,
+        "nick": nick.toLowerCase(),
+        "email": email.toLowerCase(),
+        "secret": secret,
+        "mid": "ok"
       }
 
       const result = await createUser(data)
+      console.log(result)
       if (result && result.status === 200) {
-          setMessageType("success")
-          setMessage("Usuário cadastrado com sucesso!")
-        
-          setTimeout(() => {
-            navigate("/")
-          }, 2000)
+        setMessageType("success")
+        setMessage("Usuário cadastrado com sucesso!")
+
+        setTimeout(() => {
+          navigate("/")
+        }, 2000)
       }
 
-    }catch(err){
+    } catch (err) {
       const errorMsg =
         err.response?.data?.message ||
         "Erro ao conectar-se ao servidor. Tente novamente."
 
       setMessageType("error")
       setMessage(errorMsg)
-    }finally{
+    } finally {
       setLoading(false)
     }
 
   }
 
-  if (loading) return <LoadingSpinner/>
+  if (loading) return <LoadingSpinner />
 
   return (
     <div className="cadastro-container">
@@ -84,7 +85,7 @@ export default function CadastroUsuario() {
             type="text"
             name="nome"
             value={name}
-            onChange={(e) => {setName(e.target.value)}}
+            onChange={(e) => { setName(e.target.value) }}
             required
           />
         </label>
@@ -95,7 +96,7 @@ export default function CadastroUsuario() {
             type="text"
             name="nick"
             value={nick}
-            onChange={(e) => {setNick(e.target.value)}}
+            onChange={(e) => { setNick(e.target.value) }}
             required
           />
         </label>
@@ -106,7 +107,7 @@ export default function CadastroUsuario() {
             type="email"
             name="email"
             value={email}
-            onChange={(e) => {setEmail(e.target.value)}}
+            onChange={(e) => { setEmail(e.target.value) }}
             required
           />
         </label>
@@ -117,17 +118,17 @@ export default function CadastroUsuario() {
             type="tel"
             name="telefone"
             value={telephone}
-            onChange={(e) => {setTelephone(e.target.value)}}
+            onChange={(e) => { setTelephone(e.target.value) }}
           />
         </label>
 
-        <label> 
+        <label>
           Senha:
           <input
             type="password"
             name="senha"
             value={secret}
-            onChange={(e) => {setSecret(e.target.value)}}
+            onChange={(e) => { setSecret(e.target.value) }}
             required
           />
         </label>
