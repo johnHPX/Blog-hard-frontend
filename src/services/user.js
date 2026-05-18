@@ -48,3 +48,40 @@ export async function getUser(token) {
         console.log(err)
     }
 }
+
+export async function likePost(token, postID, mid) {
+    try {
+        const result = await api.post(`/user/post/like`, {
+            postID: postID,
+            mid: mid
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: token
+            }
+        })
+        return result.data
+    } catch (error) {
+        console.log(error)
+        return { success: false, data: null };
+    }
+}
+
+export async function deslikePost(token, postID, mid) {
+    try {
+        const result = await api.delete(`/user/post/deslike`, {
+            data: {
+                postID: postID,
+                mid: mid
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: token
+            }
+        })
+        return result.data
+    } catch (error) {
+        console.log(error)
+        return { success: false, data: null };
+    }
+}

@@ -19,3 +19,13 @@ export async function findByCategory(category, offset, limit, page, mid){
         return { success: false, data: null };
     }
 }
+
+export async function findByID(id, mid) {
+    try {
+        const result = await api.get(`/post/find/id/${id}?mid=${mid}`)
+        return result.data
+    } catch (error) {
+        console.log(error)
+        return { success: false, data: null };
+    }
+}

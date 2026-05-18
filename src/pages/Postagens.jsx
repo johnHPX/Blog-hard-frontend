@@ -60,7 +60,7 @@ export default function Postagens() {
         {posts && posts.length > 0 ? (
           posts.map((post) => (
             <div key={post.id} className="fix-postagem-card">
-              <PostCard title={post.title} excerpt={post.Content} />
+              <PostCard id={post.id} title={post.title} content={post.Content} />
             </div>
           ))
         ) : (

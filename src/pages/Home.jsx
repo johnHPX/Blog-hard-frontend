@@ -7,15 +7,15 @@ import LoadingSpinner from "../components/LoadingSpinner";
 export default function Home() {
   const { featuredPosts, loading } = useFeaturedPosts();
 
-  if (loading) return <LoadingSpinner/>
+  if (loading) return <LoadingSpinner />
 
   return (
     <main className="container">
       <div className="con-flex">
         {featuredPosts.length > 0 ? (
           featuredPosts.map((post) => (
-            <div className="con-card" key={post.id}>
-              <PostCard title={post.title} excerpt={post.Content} />
+            <div className="con-card" key={post.postID}>
+              <PostCard id={post.postID} title={post.title} content={post.Content} />
             </div>
           ))
         ) : (
