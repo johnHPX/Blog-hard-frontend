@@ -103,10 +103,11 @@ export default function PostPage() {
   return (
     <div className="post-container">
       <article className="post">
-        <h1 className="post-title">{post.title}</h1>
-        <ReactMarkdown>
-          {post.Content}
-        </ReactMarkdown>
+        <div className="markdown-page-post">
+          <ReactMarkdown>
+            {post.Content}
+          </ReactMarkdown>
+        </div>
         <div className="likes">
           <span>{likes} curtidas</span>
           <button onClick={() => { likeBTN() }}>👍 Curtir</button>

@@ -1,16 +1,17 @@
 .post-container {
   min-width: 60%;
+  max-width: 65%;
   margin: 2rem auto;
   padding: 3rem;
   background: #1E293B;
   border-radius: 8px;
 }
 
-.post-title {
+/* .post-title {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #1E40AF;
-}
+} */
 
 .post-content {
   font-size: 1.1rem;
@@ -19,6 +20,8 @@
 }
 
 .likes {
+  margin-top: 2%;
+  margin-bottom: 2%;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -71,4 +74,97 @@
   padding-left: 1.5rem;
   list-style: none;
   border-left: 2px solid #ddd;
+}
+
+
+/* MARKDOWN STYLES*/
+
+/* CONTAINER */
+
+.markdown-page-post {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* TÍTULOS */
+
+.markdown-page-post h1,
+.markdown-page-post h2,
+.markdown-page-post h3,
+.markdown-page-post h4,
+.markdown-page-post h5,
+.markdown-page-post h6 {
+  color: var(--secondary);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* PARÁGRAFOS */
+
+.markdown-page-post p {
+  margin: 0.5rem 0;
+}
+
+/* LINKS */
+
+.markdown-page-post a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.markdown-page-post a:hover {
+  text-decoration: underline;
+}
+
+/* LISTAS */
+
+.markdown-page-post ul,
+.markdown-page-post ol {
+  padding-left: 1.5rem;
+}
+
+.markdown-page-post li {
+  margin: 0.3rem 0;
+}
+
+/* CÓDIGO INLINE */
+
+.markdown-page-post code {
+  background: #1f2937;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+/* BLOCO DE CÓDIGO */
+
+.markdown-page-post pre {
+  background: #0f172a;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.markdown-page-post pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* IMAGENS */
+
+.markdown-page-post img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* BLOCKQUOTE */
+
+.markdown-page-post blockquote {
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+  opacity: 0.8;
+  margin: 1rem 0;
 }
