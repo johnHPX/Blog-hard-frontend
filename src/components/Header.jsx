@@ -25,6 +25,7 @@ export default function Header() {
       <div className="header-flex">
         <Link to="/" className="logo">
           <img src="/images/logo.svg" alt="Logo BlogHard" />
+          <h1>BlogHard</h1>
         </Link>
 
         <Navbar />
@@ -50,6 +51,10 @@ export default function Header() {
           </ul>
         )}
       </div>
+{/* 
+      <div className="banner">
+        <img src="/images/banner2.png" alt="Banner BlogHard" />
+      </div> */}
     </header>
   );
 }

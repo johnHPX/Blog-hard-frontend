@@ -134,7 +134,7 @@ export default function PostPage() {
             (<>
               {comments.map((c) => (
                 <li key={c.commentID} className="comment">
-                  <p><strong>"Use1":</strong> {c.content}</p>
+                  <p><strong>Use1:</strong> {c.content}</p>
 
                   <ul className="replies">
                     {responseComments[c.commentID]?.map((r) => (
