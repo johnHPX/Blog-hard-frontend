@@ -9,11 +9,12 @@ export default function PostCard({ id, title, content }) {
 
   return (
     <div className="postCard">
-      <h2>{title}</h2>
+      <div className="markdown-content-card">
       <ReactMarkdown>
         {preview}
       </ReactMarkdown>
-      <Link to={`/post/${id}`}>Ler mais</Link>
+      </div>
+      <Link to={`/post/${id}`} className="link-ver-mais">Ler mais</Link>
     </div>
   );
 }
